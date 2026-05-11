@@ -1,0 +1,17 @@
+/* ── Level1Page.css ── */
+/* 2-column layout: sidebar + product area */
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 0;
+  padding: 0 40px 60px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .main-layout { grid-template-columns: 200px 1fr; padding: 0 20px 48px; }
+}
+@media (max-width: 767px) {
+  .main-layout { display: block; padding: 0 16px 40px; }
+}

@@ -1,0 +1,45 @@
+/* ── COLOR TOKENS ── */
+:root {
+  /* Purple scale */
+  --p50:  #F5F3FF;
+  --p100: #EDE9FE;
+  --p200: #DDD6FE;
+  --p300: #C4B5FD;
+  --p400: #A78BFA;
+  --p500: #8B5CF6;
+  --p600: #7C3AED;
+  --p700: #6D28D9;
+  --p900: #2E1065;
+
+  /* Text */
+  --ink:    #18141f;
+  --ink2:   #443d52;
+  --muted:  #847b94;
+
+  /* Borders & surfaces */
+  --border: #e8e4f3;
+  --bg:     #faf9fd;
+  --white:  #fff;
+
+  /* Border radius */
+  --r:  12px;
+  --rs: 8px;
+
+  /* Nav height */
+  --nav-h: 58px;
+}
+
+/* ── PLACEHOLDER IMAGE GRADIENTS ── */
+/* Used as background for product-img placeholders */
+.c1  { background: linear-gradient(150deg, #f3e8ff, #e9d5ff 60%, #d8b4fe); }
+.c2  { background: linear-gradient(150deg, #fce7f3, #fbcfe8 60%, #f9a8d4); }
+.c3  { background: linear-gradient(150deg, #ede9fe, #ddd6fe 60%, #c4b5fd); }
+.c4  { background: linear-gradient(150deg, #fdf4ff, #fae8ff 60%, #f0abfc); }
+.c5  { background: linear-gradient(150deg, #f5f3ff, #ede9fe 60%, #ddd6fe); }
+.c6  { background: linear-gradient(150deg, #fff1f2, #ffe4e6 60%, #fecdd3); }
+.c7  { background: linear-gradient(150deg, #f0fdf4, #dcfce7 60%, #bbf7d0); }
+.c8  { background: linear-gradient(150deg, #fefce8, #fef9c3 60%, #fde68a); }
+.c9  { background: linear-gradient(150deg, #f0f9ff, #e0f2fe 60%, #bae6fd); }
+.c10 { background: linear-gradient(150deg, #fff7ed, #fed7aa 60%, #fdba74); }
+.c11 { background: linear-gradient(150deg, #f1f5f9, #e2e8f0 60%, #cbd5e1); }
+.c12 { background: linear-gradient(150deg, #ecfdf5, #a7f3d0 60%, #6ee7b7); }

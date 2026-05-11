@@ -1,0 +1,56 @@
+/* ── FooterStrip.css ── */
+
+.footer-strip {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 24px 40px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fs-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.fs-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--p100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.fs-text h4 {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1px;
+}
+.fs-text p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .footer-strip { padding: 20px; gap: 20px; }
+}
+@media (max-width: 767px) {
+  .footer-strip {
+    padding: 16px;
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fs-item { flex: unset; min-width: unset; }
+}

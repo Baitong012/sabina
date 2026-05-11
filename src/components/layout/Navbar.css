@@ -1,0 +1,263 @@
+/* ── Navbar.css ── */
+
+/* NAV WRAPPER */
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  background: rgba(250, 249, 253, 0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* TOP ROW */
+.nav-top {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px;
+}
+
+/* LOGO */
+.nav-logo {
+  position: absolute;
+  font-family: 'FC-regular';
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--p900);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-logo em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--p600);
+}
+
+/* RIGHT ICONS */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink2);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  text-decoration: none;
+}
+.nav-icon-btn:hover {
+  background: var(--p100);
+  color: var(--p700);
+}
+
+/* CART BADGE */
+.cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--p500);
+  font-size: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* LOGIN BUTTON */
+.nav-login-btn {
+  padding: 7px 18px;
+  border-radius: 100px;
+  background: var(--p700);
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-login-btn:hover { background: var(--p900); }
+
+/* LANG TOGGLE */
+.nav-lang {
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.04em;
+}
+.nav-lang:hover { color: var(--p600); }
+
+/* ── BOTTOM MENU ROW ── */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 40px;
+  height: 44px;
+  border-top: 1px solid var(--border);
+}
+
+.nav-item { position: relative; }
+
+.nav-link {
+  padding: 6px 16px;
+  font-size: 12.5px;
+  color: var(--ink2);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--p700);
+  background: var(--p50);
+}
+.nav-link.active { font-weight: 500; }
+
+/* Chevron icon */
+.nav-link svg {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  transition: transform 0.2s;
+}
+.nav-item:hover .nav-link svg { transform: rotate(180deg); }
+
+/* Special link colors */
+.nav-promo { color: var(--p600); font-weight: 500; }
+.nav-sale   { color: #e11d48;    font-weight: 500; }
+
+/* ── DROPDOWN ── */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: 0 12px 40px rgba(109, 40, 217, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  min-width: 200px;
+  padding: 10px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 12.5px;
+  color: var(--ink2);
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.03em;
+}
+.nav-dropdown a:hover {
+  color: var(--p700);
+  background: var(--p50);
+}
+
+.nav-dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+}
+
+.nav-dropdown-label {
+  padding: 6px 20px 2px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Wide 3-column dropdown */
+.nav-dropdown-wide {
+  min-width: 560px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 20px;
+}
+.nav-dropdown-wide .nd-col { padding: 0 16px; }
+.nav-dropdown-wide .nd-col + .nd-col { border-left: 1px solid var(--border); }
+
+.nd-col-title {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.nav-dropdown-wide a {
+  padding: 6px 0;
+  border-radius: 0;
+  font-size: 12.5px;
+}
+.nav-dropdown-wide a:hover {
+  background: none;
+  color: var(--p700);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nav-top, .nav-menu { padding: 0 20px; }
+  .nav-menu { gap: 0; }
+  .nav-link { padding: 6px 10px; font-size: 12px; }
+  .nav-dropdown-wide { min-width: 480px; }
+}
+
+@media (max-width: 767px) {
+  :root { --nav-h: 52px; }
+  .nav-top  { padding: 0 16px; }
+  .nav-menu { display: none; }
+  .nav-logo { font-size: 22px; }
+  .nav-lang { display: none; }
+}

@@ -1,0 +1,190 @@
+/* ── Sidebar.css ── */
+
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 44px + 16px);
+  padding-right: 24px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.sidebar-header span {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.clear-btn {
+  font-size: 11.5px;
+  color: var(--p600);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
+  padding: 0;
+  letter-spacing: 0.02em;
+}
+.clear-btn:hover { color: var(--p700); text-decoration: underline; }
+
+/* SECTIONS */
+.sidebar-section  { margin-bottom: 22px; }
+.sidebar-title    {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.sidebar-divider  { height: 1px; background: var(--border); margin: 0 0 22px; }
+
+/* FILTER CHIPS (checkbox rows) */
+.filter-group { display: flex; flex-direction: column; gap: 7px; }
+
+.filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: var(--ink2);
+  transition: color 0.2s;
+  user-select: none;
+}
+.filter-chip:hover { color: var(--p700); }
+
+.filter-chip input[type=checkbox] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1.5px solid var(--p300);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.filter-chip input[type=checkbox]:checked {
+  background: var(--p600);
+  border-color: var(--p600);
+}
+.filter-chip input[type=checkbox]:checked::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* COLOR DOT */
+.color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.filter-chip:hover .color-dot,
+.filter-chip input:checked ~ .color-dot { border-color: var(--p500); }
+
+/* SIZE PILLS */
+.sz-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--rs);
+  border: 1.5px solid var(--border);
+  font-size: 11.5px;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+.sz-pill:hover { border-color: var(--p300); color: var(--p700); }
+.sz-pill.selected { background: var(--p700); color: #fff; border-color: var(--p700); }
+
+/* PRICE INPUTS */
+.price-range {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.price-input {
+  width: 84px;
+  padding: 7px 10px;
+  border-radius: var(--rs);
+  border: 1.5px solid var(--border);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  color: var(--ink);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.price-input:focus  { border-color: var(--p400); }
+.price-sep          { font-size: 11px; color: var(--muted); }
+
+.btn-apply {
+  width: 100%;
+  padding: 9px;
+  border-radius: var(--rs);
+  background: var(--p100);
+  color: var(--p700);
+  font-size: 12.5px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+.btn-apply:hover { background: var(--p200); }
+
+/* ── MOBILE FILTER TOGGLE ── */
+.filter-toggle { display: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .sidebar { padding-right: 16px; }
+}
+@media (max-width: 767px) {
+  .filter-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+    margin: 0 16px 10px;
+    padding: 10px 14px;
+    border-radius: var(--rs);
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink2);
+    cursor: pointer;
+  }
+  .filter-toggle-arrow           { transition: transform 0.25s; }
+  .filter-toggle.open .filter-toggle-arrow { transform: rotate(180deg); }
+
+  .sidebar {
+    position: static;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+  .sidebar.open {
+    max-height: 9999px;
+    margin-bottom: 16px;
+  }
+}

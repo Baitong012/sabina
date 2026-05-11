@@ -1,0 +1,102 @@
+/* ── CategoryHero.css ── */
+
+.cat-hero {
+  margin: 16px 40px 20px;
+  border-radius: var(--r);
+  background: linear-gradient(118deg, var(--p900) 0%, var(--p700) 45%, #9f67fa 100%);
+  padding: 32px 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Decorative circles */
+.cat-hero::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -50px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+.cat-hero::before {
+  content: '';
+  position: absolute;
+  right: 100px;
+  bottom: -70px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* LEFT SIDE */
+.ch-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  padding: 3px 12px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.ch-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.ch-title em { font-style: italic; }
+
+.ch-desc {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 340px;
+  line-height: 1.6;
+}
+
+/* RIGHT STATS */
+.ch-right {
+  display: flex;
+  gap: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.ch-stat { text-align: center; color: #fff; }
+.ch-stat strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  display: block;
+  line-height: 1;
+}
+.ch-stat span { font-size: 10.5px; opacity: 0.65; letter-spacing: 0.06em; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .cat-hero { margin: 12px 20px 16px; padding: 26px 28px; }
+  .ch-title { font-size: 28px; }
+}
+@media (max-width: 767px) {
+  .cat-hero {
+    margin: 10px 16px 14px;
+    padding: 20px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .ch-title  { font-size: 24px; }
+  .ch-desc   { font-size: 12px; max-width: 100%; }
+  .ch-right  { gap: 16px; }
+  .ch-stat strong { font-size: 22px; }
+}
